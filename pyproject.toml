@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "sabor-express"
+version = "0.1.0"
+description = "aplicativo de entrega de comida. Nesse aplicativo, existirão várias funcionalidades, como o cadastro de restaurante e comidas, serviço de entrega, avaliação e tudo isso."
+authors = ["Marlos Ribeiro <marlos.mgrb@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
