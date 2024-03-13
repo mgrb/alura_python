@@ -1,0 +1,14 @@
+{
+    "name": "Alura - Python",
+
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "pyapp",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
+}
