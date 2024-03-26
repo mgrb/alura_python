@@ -20,4 +20,6 @@ SHELL ["/bin/zsh", "-c"]
 WORKDIR /workspace
 COPY ../ .
 
+RUN poetry config virtualenvs.create false
+
 CMD ["tail", "-f", "/dev/null"]
