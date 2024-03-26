@@ -29,23 +29,25 @@ def get_opcao()-> int:
     print(f'Você escolheu a opção: {opc}')
   except ValueError:
     print('Opção inválida')
+    opc = 99
   return opc
 
 def executar_opcao(opcao: int)-> None:
-  if opcao == 1:
-    print('Cadastrando restaurante')
-  elif opcao == 2:
-    print('Listando restaurantes')
-  elif opcao == 3:
-    print('Ativando restaurante')
-  elif opcao == 99:
-    print('Voltar ao menu principal')
-  elif opcao == 0:
-    os.system('clear')
-    print('Saindo do sistema')
-    exit(0)
-  else:
-    print('Opção inválida')
+  match opcao:
+    case 1:
+      print('Cadastrando restaurante')
+    case 2:
+      print('Listando restaurantes')
+    case 3:
+      print('Ativando restaurante')
+    case 99:
+      print('Voltando ao menu principal')
+    case 0:
+      os.system('clear')
+      print('Saindo do sistema')
+      exit(0)
+    case _:
+      print('Opção inválida')
 
 if __name__ == '__main__':
   opcao: int = 99
