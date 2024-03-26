@@ -1,7 +1,7 @@
 import os
 
-
 restaurante_repo = []
+
 
 def print_header() -> None:
     print("""
@@ -55,22 +55,29 @@ def executar_opcao(opcao: int) -> None:
         case _:
             print('Opção inválida')
 
+
 def cadastrar_restaurante() -> None:
     while True:
         print('++++++++++++++++++++++++++')
         print('Cadastrando restaurante')
-        nome_restalrante = input('Digite o nome do restaurante que deseja cadastrar: ')
+        nome_restalrante = input(
+            'Digite o nome do restaurante que deseja cadastrar: '
+        )
         restaurante_repo.append(nome_restalrante)
         print(f'Restaurante {nome_restalrante} cadastrado com sucesso!')
-        cadastrar_restaurante = input('Deseja cadastrar um restaurante? (s/n): ')
+        cadastrar_restaurante = input(
+            'Deseja cadastrar um restaurante? (s/n): '
+        )
         if cadastrar_restaurante.lower() == 'n':
             break
+
 
 def listar_restaurantes() -> None:
     print('++++++++++++++++++++++++++')
     print('Listando restaurantes')
     for index, restaurante in enumerate(restaurante_repo):
         print(f'{index + 1}. {restaurante}')
+
 
 if __name__ == '__main__':
     opcao: int = 99
