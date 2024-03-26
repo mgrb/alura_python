@@ -1,3 +1,5 @@
+import os
+
 def print_header() -> None:
    print("""
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
@@ -16,7 +18,8 @@ def print_menu()-> None:
     1. Cadastrar restaurante
     2. Listar restaurante
     3. Ativar restaurante
-    4. Sair
+    99. Voltar ao menu principal
+    0. Sair
       """)
    
 def get_opcao()-> int:
@@ -35,15 +38,22 @@ def executar_opcao(opcao: int)-> None:
     print('Listando restaurantes')
   elif opcao == 3:
     print('Ativando restaurante')
-  elif opcao == 4:
+  elif opcao == 99:
+    print('Voltar ao menu principal')
+  elif opcao == 0:
+    os.system('clear')
     print('Saindo do sistema')
     exit(0)
   else:
     print('Opção inválida')
 
 if __name__ == '__main__':
-  print_header()
+  opcao: int = 99
   while True:
+    if opcao == 99:
+      os.system('clear')
+      print_header()
     print_menu()
-    opcao: int = get_opcao()
+    opcao = get_opcao()
     executar_opcao(opcao)
+    
